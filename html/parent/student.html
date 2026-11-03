@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../css/normalize.css">
+
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/student.css">
+
+  <link rel="stylesheet" href="../../css/adaptive/main-adaptive.css">
+  <link rel="stylesheet" href="../../css/adaptive/student-adaptive.css">
+
+  <title>Электронный журнал 40 || Дневник Ученика</title>
+  
+</head>
+<body>
+
+  <div class="burger">
+    <div class="burger__wrapper">
+      <div class="burger__top">
+        <div class="burger__help-container">
+          <div class="logo-container logo-container_burger">
+            <div class="logo-container__img"></div>
+            <div class="logo-text">
+              <div class="logo-text__title">Дневник</div>
+              <p class="logo-text__sub-title">Электронный журнал</p>
+            </div>
+          </div>
+          <div class="burger__top-container">
+            <div class="user-block">
+              <div class="user-block__avatar js-parent-avatar"></div>
+              <div class="user-info">
+                <div class="user-info__name js-parent-name"></div>
+                <p class="user-info__class js-parent-status"></p>
+              </div>
+            </div>
+            <button class="header-right__btn-exit">Выйти</button>
+          </div>
+        </div>
+        <div class="burger__closed-btn" onclick="closedBurgerMenu()"></div>
+      </div>
+      <div class="burger__main">
+        <nav class="aside-nav">
+          <ul class="aside-nav__nav-list">
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="student.html" class="aside-nav__link"><img src="../../assets/diary.svg" alt="Дневник" class="aside-nav__link-logo">Дневник</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="schedule.html" class="aside-nav__link"><img src="../../assets/schedule.svg" alt="Расписание" class="aside-nav__link-logo">Расписание</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="points.html" class="aside-nav__link"><img src="../../assets/point.svg" alt="Оценки" class="aside-nav__link-logo">Оценки</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="homework.html" class="aside-nav__link"><img src="../../assets/homework.svg" alt="ДЗ" class="aside-nav__link-logo">ДЗ</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="announcements.html" class="aside-nav__link"><img src="../../assets/announcement.svg" alt="Объявления" class="aside-nav__link-logo">Объявления</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="messages.html" class="aside-nav__link"><img src="../../assets/message.svg" alt="Сообщения" class="aside-nav__link-logo">Сообщения</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="main-wrapper">
+      <div class="header-left">
+      <div class="logo-container">
+        <div class="logo-container__img"></div>
+        <!-- <img src="#" alt="Логотип школы номер 40" class="logo-container__img"> -->
+        <div class="logo-text">
+          <div class="logo-text__title">Дневник</div>
+          <p class="logo-text__sub-title">Электронный журнал</p>
+        </div>
+      </div>
+
+      <div class="header-search">
+        <input type="search" class="header-search__input" placeholder="Поиск по дневнику">
+      </div>
+      </div>
+
+      <div class="header-right">
+        <button class="header-right__btn-exit">Выйти</button>
+        <div class="user-block">
+          <div class="user-block__avatar js-parent-avatar"></div>
+          <div class="user-info">
+            <div class="user-info__name js-parent-name"></div>
+            <p class="user-info__class js-parent-status"></p>
+          </div>
+        </div>
+        <div class="burger-button" onclick="openBurgerMenu()">
+          <span class="burger-button__span"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="main-content">
+      <aside class="left-panel sidebar">
+        <div class="aside-card aside-card_one">
+          <div class="user-block">
+            <div class="user-block__avatar js-parent-avatar"></div>
+            <div class="user-info">
+              <div class="user-info__name js-parent-name"></div>
+              <p class="user-info__class js-parent-status"></p>
+            </div>
+          </div>
+          <div class="user-class-teacher">
+            <div class="user-class-teacher__title">Кл. руководитель</div>
+            <div class="user-class-teacher__sub-title">Орлова Т.С.</div>
+          </div>
+        </div>
+
+        <div class="aside-card aside-card_nav">
+          <nav class="aside-nav">
+            <ul class="aside-nav__nav-list">
+              <li class="aside-nav__list-item"><a href="student.html" class="aside-nav__link"><img src="../../assets/diary.svg" alt="Дневник" class="aside-nav__link-logo">Дневник</a></li>
+              <li class="aside-nav__list-item"><a href="schedule.html" class="aside-nav__link"><img src="../../assets/schedule.svg" alt="Расписание" class="aside-nav__link-logo">Расписание</a></li>
+              <li class="aside-nav__list-item"><a href="points.html" class="aside-nav__link"><img src="../../assets/point.svg" alt="Оценки" class="aside-nav__link-logo">Оценки</a></li>
+              <li class="aside-nav__list-item"><a href="homework.html" class="aside-nav__link"><img src="../../assets/homework.svg" alt="ДЗ" class="aside-nav__link-logo">ДЗ</a></li>
+              <li class="aside-nav__list-item"><a href="announcements.html" class="aside-nav__link"><img src="../../assets/announcement.svg" alt="Объявления" class="aside-nav__link-logo">Объявления</a></li>
+              <li class="aside-nav__list-item"><a href="messages.html" class="aside-nav__link"><img src="../../assets/message.svg" alt="Сообщения" class="aside-nav__link-logo">Сообщения</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="aside-card">
+          <div class="attendance">
+            <div class="attendance__title">Посещаемость за месяц</div>
+            <div class="attendance__progress-text">
+              <div class="attendance__percent">100%</div>
+              <!-- <div class="attendance__pass">0 пропусков</div> -->
+            </div>
+            <div class="attendance__progress-bar attendance__progress-bar_excellent"></div>
+            <div class="attendance__progress-text">
+              <div class="attendance__percent"></div>
+              <div class="attendance__pass">0 пропусков</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="center-panel">
+        <div class="main-header">
+          <div class="main-header__title-container">
+            <h1 class="main-header__title">Дневник</h1>
+            <p class="main-header__sub-title"><span class="user-name">Соколова. А</span> <span class="user-class">9А</span> <span class="razdelitel">*</span> <span class="quarter"> | четверть</span></p>
+          </div>
+          <button class="export-btn export-btn_content-export">Экспорт в PDF</button>
+        </div>
+
+        <div class="days">
+          <div class="days-up">
+            <div class="days-up__switch">
+              <button id="prev-week-btn" class="days-up__prev"><<</button>
+              <span id="week-title" class="days-up__period">21 - 26 сентября 2026</span>
+              <button id="next-week-btn" class="days-up__next">>></button>
+            </div>
+            <button class="export-btn export-btn_content-print">Печать</button>
+          </div>
+          <div class="days-down">
+            <div id="day-btn-1" class="days-down__day-card" data-day="1">ПН <span>21</span></div>
+            <div id="day-btn-2" class="days-down__day-card" data-day="2">ВТ <span>22</span></div>
+            <div id="day-btn-3" class="days-down__day-card" data-day="3">СР <span>23</span></div>
+            <div id="day-btn-4" class="days-down__day-card" data-day="4">ЧТ <span>24</span></div>
+            <div id="day-btn-5" class="days-down__day-card" data-day="5">ПТ <span>25</span></div>
+            <div id="day-btn-6" class="days-down__day-card" data-day="6">СБ <span>26</span></div>
+          </div>
+
+          <div class="export-container">
+            <button class="export-btn export-btn_content-export">Экспорт в PDF</button>
+            <button class="export-btn export-btn_content-print">Печать</button>
+          </div>
+
+
+          <!-- <div class="days-down">
+            
+            <button class="days-down__day-card day-navigation-btn days-down__day-card_active" data-day-index="1">
+              <span class="days-down__title">ПН</span>
+              <span class="days-down__sub-title">21</span>
+            </button>
+
+            <button class="days-down__day-card day-navigation-btn" data-day-index="2">
+              <span class="days-down__title">ВТ</span>
+              <span class="days-down__sub-title">22</span>
+            </button>
+
+            <button class="days-down__day-card day-navigation-btn" data-day-index="3">
+              <span class="days-down__title">СР</span>
+              <span class="days-down__sub-title">23</span>
+            </button>
+
+            <button class="days-down__day-card day-navigation-btn" data-day-index="4">
+              <span class="days-down__title">ЧТ</span>
+              <span class="days-down__sub-title">24</span>
+            </button>
+
+            <button class="days-down__day-card day-navigation-btn" data-day-index="5">
+              <span class="days-down__title">ПТ</span>
+              <span class="days-down__sub-title">25</span>
+            </button>
+
+            <button class="days-down__day-card day-navigation-btn" data-day-index="6">
+              <span class="days-down__title">СБ</span>
+              <span class="days-down__sub-title">26</span>
+            </button>
+
+          </div> -->
+        </div>
+
+        
+        <div id="journal-container">
+          <div class="schedule-week">
+            <div class="schedule-header">
+              <div class="schedule-header__day">
+                <h2 class="schedule-header__title">Понедельник</h2>
+                <span class="schedule-header__sub-title">26.10</span>
+              </div>
+              <div class="schedule-header__info-day">
+                
+                  <div class="schedule-header__rait-container">
+                    <span class="schedule-header__point schedule-header__point_excellent">5</span>
+                    <span class="schedule-header__point schedule-header__point_good">4</span>
+                    <span class="schedule-header__point schedule-header__point_normal">3</span>
+                    <span class="schedule-header__point schedule-header__point_horrible">2</span>
+                  </div>
+                
+                <div class="schedule-header__count-lesson">8 уроков</div>
+              </div>
+            </div>
+
+            <div class="schedule-block">
+              <div class="schedule-main">
+                <div class="schedule-left">
+                  <div class="schedule-left__number">1</div>
+                  <div class="schedule-left__time">
+                    <span>08:30</span><br><span>09:15</span>
+                  </div>
+                </div>
+                <div class="schedule-right">
+                  <div class="schedule-right__header">
+                    <h3 class="schedule-right__title">История</h3>
+                    
+                  </div>
+                  <div class="schedule-right__homework">
+                    <div class="schedule-right__homework-title">
+                      <h4>Домашнее задание ДЗ</h4>
+                    </div>
+                    <p class="schedule-right__homework-text"></p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="schedule-main">
+                <div class="schedule-left">
+                  <div class="schedule-left__number">2</div>
+                  <div class="schedule-left__time">
+                    <span>09:25</span><br><span>10:10</span>
+                  </div>
+                </div>
+                <div class="schedule-right">
+                  <div class="schedule-right__header">
+                    <h3 class="schedule-right__title">История</h3>
+                    
+                  </div>
+                  <div class="schedule-right__homework">
+                    <div class="schedule-right__homework-title">
+                      <h4>Домашнее задание ДЗ</h4>
+                    </div>
+                    <p class="schedule-right__homework-text"></p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="schedule-main">
+                <div class="schedule-left">
+                  <div class="schedule-left__number">3</div>
+                  <div class="schedule-left__time">
+                    <span>10:25</span><br><span>11:10</span>
+                  </div>
+                </div>
+                <div class="schedule-right">
+                  <div class="schedule-right__header">
+                    <h3 class="schedule-right__title">История</h3>
+                    
+                  </div>
+                  <div class="schedule-right__homework">
+                    <div class="schedule-right__homework-title">
+                      <h4>Домашнее задание ДЗ</h4>
+                    </div>
+                    <p class="schedule-right__homework-text"></p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="schedule-main">
+                <div class="schedule-left">
+                  <div class="schedule-left__number">4</div>
+                  <div class="schedule-left__time">
+                    <span>11:30</span><br><span>12:15</span>
+                  </div>
+                </div>
+                <div class="schedule-right">
+                  <div class="schedule-right__header">
+                    <h3 class="schedule-right__title">История</h3>
+                    
+                  </div>
+                  <div class="schedule-right__homework">
+                    <div class="schedule-right__homework-title">
+                      <h4>Домашнее задание ДЗ</h4>
+                    </div>
+                    <p class="schedule-right__homework-text"></p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="schedule-main">
+                <div class="schedule-left">
+                  <div class="schedule-left__number">5</div>
+                  <div class="schedule-left__time">
+                    <span>12:25</span><br><span>13:10</span>
+                  </div>
+                </div>
+                <div class="schedule-right">
+                  <div class="schedule-right__header">
+                    <h3 class="schedule-right__title">История</h3>
+                    
+                  </div>
+                  <div class="schedule-right__homework">
+                    <div class="schedule-right__homework-title">
+                      <h4>Домашнее задание ДЗ</h4>
+                    </div>
+                    <p class="schedule-right__homework-text"></p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="schedule-main">
+                <div class="schedule-left">
+                  <div class="schedule-left__number">6</div>
+                  <div class="schedule-left__time">
+                    <span>13:20</span><br><span>14:05</span>
+                  </div>
+                </div>
+                <div class="schedule-right">
+                  <div class="schedule-right__header">
+                    <h3 class="schedule-right__title">История</h3>
+                    
+                  </div>
+                  <div class="schedule-right__homework">
+                    <div class="schedule-right__homework-title">
+                      <h4>Домашнее задание ДЗ</h4>
+                    </div>
+                    <p class="schedule-right__homework-text"></p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="schedule-main">
+                <div class="schedule-left">
+                  <div class="schedule-left__number">7</div>
+                  <div class="schedule-left__time">
+                    <span>14:15</span><br><span>15:00</span>
+                  </div>
+                </div>
+                <div class="schedule-right">
+                  <div class="schedule-right__header">
+                    <h3 class="schedule-right__title">История</h3>
+                    
+                  </div>
+                  <div class="schedule-right__homework">
+                    <div class="schedule-right__homework-title">
+                      <h4>Домашнее задание ДЗ</h4>
+                    </div>
+                    <p class="schedule-right__homework-text"></p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="schedule-main">
+                <div class="schedule-left">
+                  <div class="schedule-left__number">8</div>
+                  <div class="schedule-left__time">
+                    <span>15:10</span><br><span>15:55</span>
+                  </div>
+                </div>
+                <div class="schedule-right">
+                  <div class="schedule-right__header">
+                    <h3 class="schedule-right__title">История</h3>
+                    
+                  </div>
+                  <div class="schedule-right__homework">
+                    <div class="schedule-right__homework-title">
+                      <h4>Домашнее задание ДЗ</h4>
+                    </div>
+                    <p class="schedule-right__homework-text"></p>
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <aside class="right-panel">
+      <div class="aside-card aside-card_right">
+        <div class="result-week">
+          <div class="result-week__title">Результаты <br> недели</div>
+          <div class="result-upgrade">
+            <div class="result-upgrade__sub-title">5.0</div> 
+            <span class="result-upgrade__percent">+0.2</span>
+          </div>
+        </div>
+
+        <div class="result-grade">
+          <div class="grade-card">
+            <div class="grade-card__title grade-card__title_excellent">5</div>
+            <div class="grade-card__count">3</div>
+          </div>
+          <div class="grade-card">
+            <div class="grade-card__title grade-card__title_good">4</div>
+            <div class="grade-card__count">6</div>
+          </div>
+          <div class="grade-card">
+            <div class="grade-card__title grade-card__title_normal">3</div>
+            <div class="grade-card__count">1</div>
+          </div>
+          <div class="grade-card">
+            <div class="grade-card__title grade-card__title_horrible">2</div>
+            <div class="grade-card__count">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aside-card aside-card_right">
+        <div class="academic-performance-card">
+          <div class="academic-performance-card__title">Успеваемость</div>
+
+          <div class="academic-performance-card__object">
+            <div class="academic-performance-card__text-container">
+              <div class="academic-performance-card__text-title">Русский язык</div>
+              <div class="academic-performance-card__text-sub-title">5.0</div>
+            </div>
+            <div class="academic-performance-card__progress-bar academic-performance-card__progress-bar_excellent"></div>
+          </div>
+
+          <div class="academic-performance-card__object">
+            <div class="academic-performance-card__text-container">
+              <div class="academic-performance-card__text-title">Алгебра</div>
+              <div class="academic-performance-card__text-sub-title">4.0</div>
+            </div>
+            <div class="academic-performance-card__progress-bar academic-performance-card__progress-bar_good"></div>
+          </div>
+
+          <div class="academic-performance-card__object">
+            <div class="academic-performance-card__text-container">
+              <div class="academic-performance-card__text-title">История</div>
+              <div class="academic-performance-card__text-sub-title">3.0</div>
+            </div>
+            <div class="academic-performance-card__progress-bar academic-performance-card__progress-bar_normal"></div>
+          </div>
+
+          <div class="academic-performance-card__object">
+            <div class="academic-performance-card__text-container">
+              <div class="academic-performance-card__text-title">Химия</div>
+              <div class="academic-performance-card__text-sub-title">2.0</div>
+            </div>
+            <div class="academic-performance-card__progress-bar academic-performance-card__progress-bar_horrible"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aside-card aside-card_right">
+        <div class="events-title">Ближайшие <br> события</div>
+        <div class="events-info">
+          <div class="events-info__date">30 <br> сент</div>
+          <div class="events-info__desc">
+            <div class="events-info__desc-title">Род. Собрание</div>
+            <div class="events-info__desc-sub-title">18:30 каб 410</div>
+          </div>
+        </div>
+        <div class="events-info">
+          <div class="events-info__date">30 <br> сент</div>
+          <div class="events-info__desc">
+            <div class="events-info__desc-title">Род. Собрание</div>
+            <div class="events-info__desc-sub-title">18:30 каб 410</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aside-card aside-card_adaptive">
+        <div class="attendance">
+          <div class="attendance__title">Посещаемость за месяц</div>
+          <div class="attendance__progress-text">
+            <div class="attendance__percent">100%</div>
+            <!-- <div class="attendance__pass">0 пропусков</div> -->
+          </div>
+          <div class="attendance__progress-bar attendance__progress-bar_excellent"></div>
+          <div class="attendance__progress-text">
+            <div class="attendance__percent"></div>
+            <div class="attendance__pass">0 пропусков</div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../js/database-config.js"></script>
+  
+  <script src="../../js/main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+  <script src="../../js/search.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js"></script>
+
+  <script src="../../js/parent-ui.js"></script>
+</body>
+</html>

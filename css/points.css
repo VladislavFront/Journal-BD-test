@@ -1,0 +1,111 @@
+.main-content {
+  column-gap: 15px;
+}
+
+.center-panel {
+  width: 100%;
+}
+
+.work-block {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.work-block__title {
+  font-size: var(--text-size-main-title);
+}
+
+.work-block__select-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.select-custom {
+  padding: 10px;
+  border: 1px solid var(--no-active-color-dark);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-card-dark);
+  color: var(--text-color-dark);
+  font-size: var(--text-size-sub-text);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.select-custom:focus {
+  outline: none;
+  border: 1px solid var(--icon-color-dark);
+}
+
+.select-custom option {
+  background-color: var(--bg-card-dark);
+  color: var(--text-color-dark);
+}
+
+.select-hw {
+  width: 125px;
+}
+
+.journal-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  /* border: 2px solid var(--no-active-color-dark); */
+  border-radius: var(--border-radius-md);
+}
+
+.journal-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.journal-table th, 
+.journal-table td {
+  padding: 10px;
+  border-right: 1px solid var(--no-active-color-dark);
+  border-bottom: 1px solid var(--no-active-color-dark);
+  text-align: center;
+  font-size: var(--text-size-main-text);
+}
+
+.journal-table th {
+  background-color: var(--bg-card-dark);
+  color: var(--text-color-dark);
+  font-weight: 100;
+}
+
+.journal-table td:first-child {
+  /* position: sticky; */
+  /* left: 0; */
+  /* z-index: 3; */
+  background-color: var(--bg-card-dark);
+  text-align: left;
+  min-width: 140px;
+  font-weight: auto;
+  border-right: 2px solid var(--no-active-color-dark);
+}
+
+.journal-table th:first-child {
+  z-index: 3; /* Чтобы шапка не проваливалась под ячейки при скролле */
+}
+
+.section-total {
+  background-color: var(--bg-card-dark);
+  color: var(--excellent-color-dark);
+  min-width: 100px;
+}
+
+/* Ширина ячеек для самих оценок */
+.mark-cell {
+  min-width: 35px;
+  padding: 8px 4px;
+  font-weight: 100;
+}
+
+.journal-table td.mark-cell:hover {
+  background-color: var(--icon-color-dark); 
+  color: var(--text-color-dark);
+  font-weight: bold;
+}

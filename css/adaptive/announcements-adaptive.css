@@ -1,0 +1,27 @@
+@media (max-width: 1000px) {
+  .announcements-title {
+    font-size: calc(var(--text-size-main-title) * var(--text-scale-md));
+  }
+
+  .announcements-card-container__type-ann,
+  .announcements-card-container__time-ann,
+  .announcements-card-container__people-ann {
+      font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .announcements-card-container__card-title {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .announcements-card-container__card-text {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .announcements-card-container__card {
+    padding: 20px;
+  }
+
+  .announcements-card-container__header-left {
+    column-gap: 15px;
+  }
+}

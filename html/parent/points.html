@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../css/normalize.css">
+
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/points.css">
+
+  <link rel="stylesheet" href="../../css/adaptive/main-adaptive.css">
+  <link rel="stylesheet" href="../../css/adaptive/points-adaptive.css">
+
+  <title>Электронный журнал 40 || Оценки Ученика</title>
+</head>
+<body>
+
+  <div class="burger">
+    <div class="burger__wrapper">
+      <div class="burger__top">
+        <div class="burger__help-container">
+          <div class="logo-container logo-container_burger">
+            <div class="logo-container__img"></div>
+            <div class="logo-text">
+              <div class="logo-text__title">Дневник</div>
+              <p class="logo-text__sub-title">Электронный журнал</p>
+            </div>
+          </div>
+          <div class="burger__top-container">
+            <div class="user-block">
+              <div class="user-block__avatar">АС</div>
+              <div class="user-info">
+                <div class="user-info__name">Соколова А.</div>
+                <p class="user-info__class">9A класс</p>
+              </div>
+            </div>
+            <button class="header-right__btn-exit">Выйти</button>
+          </div>
+        </div>
+        <div class="burger__closed-btn" onclick="closedBurgerMenu()"></div>
+      </div>
+      <div class="burger__main">
+        <nav class="aside-nav">
+          <ul class="aside-nav__nav-list">
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="student.html" class="aside-nav__link"><img src="../../assets/diary.svg" alt="Дневник" class="aside-nav__link-logo">Дневник</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="schedule.html" class="aside-nav__link"><img src="../../assets/schedule.svg" alt="Расписание" class="aside-nav__link-logo">Расписание</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="points.html" class="aside-nav__link"><img src="../../assets/point.svg" alt="Оценки" class="aside-nav__link-logo">Оценки</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="homework.html" class="aside-nav__link"><img src="../../assets/homework.svg" alt="ДЗ" class="aside-nav__link-logo">ДЗ</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="announcements.html" class="aside-nav__link"><img src="../../assets/announcement.svg" alt="Объявления" class="aside-nav__link-logo">Объявления</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="messages.html" class="aside-nav__link"><img src="../../assets/message.svg" alt="Сообщения" class="aside-nav__link-logo">Сообщения</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="main-wrapper">
+      <div class="header-left">
+      <div class="logo-container">
+        <div class="logo-container__img"></div>
+        <!-- <img src="#" alt="Логотип школы номер 40" class="logo-container__img"> -->
+        <div class="logo-text">
+          <div class="logo-text__title">Дневник</div>
+          <p class="logo-text__sub-title">Электронный журнал</p>
+        </div>
+      </div>
+
+      <div class="header-search">
+        <input type="search" class="header-search__input" placeholder="Поиск по дневнику">
+      </div>
+      </div>
+
+      <div class="header-right">
+        <button class="header-right__btn-exit">Выйти</button>
+        <div class="user-block">
+          <div class="user-block__avatar">АС</div>
+          <div class="user-info">
+            <div class="user-info__name">Соколова А.</div>
+            <p class="user-info__class">9A класс</p>
+          </div>
+        </div>
+        <div class="burger-button" onclick="openBurgerMenu()">
+          <span class="burger-button__span"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="main-content">
+      <aside class="left-panel sidebar">
+        <div class="aside-card aside-card_one">
+          <div class="user-block">
+            <div class="user-block__avatar">АС</div>
+            <div class="user-info">
+              <div class="user-info__name">Соколова А.</div>
+              <p class="user-info__class">9A класс</p>
+            </div>
+          </div>
+          <div class="user-class-teacher">
+            <div class="user-class-teacher__title">Кл. руководитель</div>
+            <div class="user-class-teacher__sub-title">Орлова Т.С.</div>
+          </div>
+        </div>
+
+        <div class="aside-card aside-card_nav">
+          <nav class="aside-nav">
+            <ul class="aside-nav__nav-list">
+              <li class="aside-nav__list-item"><a href="student.html" class="aside-nav__link"><img src="../../assets/diary.svg" alt="Дневник" class="aside-nav__link-logo">Дневник</a></li>
+              <li class="aside-nav__list-item"><a href="schedule.html" class="aside-nav__link"><img src="../../assets/schedule.svg" alt="Расписание" class="aside-nav__link-logo">Расписание</a></li>
+              <li class="aside-nav__list-item"><a href="points.html" class="aside-nav__link"><img src="../../assets/point.svg" alt="Оценки" class="aside-nav__link-logo">Оценки</a></li>
+              <li class="aside-nav__list-item"><a href="homework.html" class="aside-nav__link"><img src="../../assets/homework.svg" alt="ДЗ" class="aside-nav__link-logo">ДЗ</a></li>
+              <li class="aside-nav__list-item"><a href="announcements.html" class="aside-nav__link"><img src="../../assets/announcement.svg" alt="Объявления" class="aside-nav__link-logo">Объявления</a></li>
+              <li class="aside-nav__list-item"><a href="messages.html" class="aside-nav__link"><img src="../../assets/message.svg" alt="Сообщения" class="aside-nav__link-logo">Сообщения</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="aside-card">
+          <div class="attendance">
+            <div class="attendance__title">Посещаемость за месяц</div>
+            <div class="attendance__progress-text">
+              <div class="attendance__percent">100%</div>
+              <!-- <div class="attendance__pass">0 пропусков</div> -->
+            </div>
+            <div class="attendance__progress-bar attendance__progress-bar_excellent"></div>
+            <div class="attendance__progress-text">
+              <div class="attendance__percent"></div>
+              <div class="attendance__pass">0 пропусков</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="journal-container">
+        <table class="journal-table">
+          <thead>
+            <!-- Верхний уровень шапки с объединением ячеек -->
+            <tr>
+                <th rowspan="2">Предмет</th>
+                <th colspan="31" class="section-marks">Числа месяца</th>
+                <th rowspan="2" class="section-total">Итог</th>
+            </tr>
+            <tr>
+              <!-- 31 день -->
+              <th class="mark-cell">1</th>
+              <th class="mark-cell">2</th>
+              <th class="mark-cell">3</th>
+              <th class="mark-cell">4</th>
+              <th class="mark-cell">5</th>
+              <th class="mark-cell">6</th>
+              <th class="mark-cell">7</th>
+              <th class="mark-cell">8</th>
+              <th class="mark-cell">9</th>
+              <th class="mark-cell">10</th>
+              <th class="mark-cell">11</th>
+              <th class="mark-cell">12</th>
+              <th class="mark-cell">13</th>
+              <th class="mark-cell">14</th>
+              <th class="mark-cell">15</th>
+              <th class="mark-cell">16</th>
+              <th class="mark-cell">17</th>
+              <th class="mark-cell">18</th>
+              <th class="mark-cell">19</th>
+              <th class="mark-cell">20</th>
+              <th class="mark-cell">21</th>
+              <th class="mark-cell">22</th>
+              <th class="mark-cell">23</th>
+              <th class="mark-cell">24</th>
+              <th class="mark-cell">25</th>
+              <th class="mark-cell">26</th>
+              <th class="mark-cell">27</th>
+              <th class="mark-cell">28</th>
+              <th class="mark-cell">29</th>
+              <th class="mark-cell">30</th>
+              <th class="mark-cell">31</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Алгебра</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">3</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">5</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+              <td>Биология</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">3</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">5</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+              <td>Вероятность и статистика</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">3</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">5</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+              <td>География</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">3</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">5</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+              <td>Геометрия</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">3</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">5</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+              <td>Индивидуальный проект</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">3</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">5</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+              <td>Иностранный язык (английский язык)</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">3</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">4</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell">5</td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="mark-cell"></td>
+              <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>Информатика</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>История</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>Курс практической грамотности (орфография)</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>Литература</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>ОБЗР</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>Обществознание</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>Русский язык</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>Физика</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>Физическая культура</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>Физическая культура Волейбол</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          
+          <tr>
+            <td>Химия</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">3</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">4</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell">5</td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="mark-cell"></td>
+            <td class="section-total"><b>4</b></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../js/database-config.js"></script>
+
+  <script src="../../js/main.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+  <script src="../../js/search.js"></script>
+</body>
+</html>

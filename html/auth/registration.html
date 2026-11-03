@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../css/normalize.css">
+
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/registration.css">
+
+  <link rel="stylesheet" href="../../css/adaptive/main-adaptive.css">
+  <link rel="stylesheet" href="../../css/adaptive/registration-adaptive.css">
+  
+  <title>Электронный журнал 40 || Регистрация</title>
+</head>
+<body>
+
+  <main class="main">
+
+    <section class="reg-section">
+      <div class="logo-container">
+        <div class="logo-container__img"></div>
+        <!-- <img src="#" alt="Логотип школы номер 40" class="logo-container__img"> -->
+        <div class="logo-text">
+          <div class="logo-text__title">Дневник</div>
+          <p class="logo-text__sub-title">Электронный журнал</p>
+        </div>
+      </div>
+
+      <div class="role-block">
+        <div class="role-text">
+          <h1 class="role-text__title">Регистрация и вход</h1>
+          <p class="role-text__sub-title">Выберите роль, чтобы пролдолжить</p>
+        </div>
+        <div class="role-card-container" id="role-card-container">
+          <div class="role-card" id="role-parents">
+            <div class="role-card__img"></div>
+            <!-- <img src="#" alt="Родитель" class="role-card__img"> -->
+            <div class="role-card__text">
+              <h2 class="role-card__title">Родитель</h2>
+              <p class="role-card__sub-title">Дневник и успеваемость</p>
+            </div>
+          </div>
+          <div class="role-card" id="role-student">
+            <div class="role-card__img"></div>
+            <!-- <img src="#" alt="Ученик" class="role-card__img"> -->
+            <div class="role-card__text">
+              <h2 class="role-card__title">Ученик</h2>
+              <p class="role-card__sub-title">Расписание, оценки, ДЗ</p>
+            </div>
+          </div>
+          <div class="role-card" id="role-teacher">
+            <div class="role-card__img"></div>
+            <!-- <img src="#" alt="Учитель" class="role-card__img"> -->
+            <div class="role-card__text">
+              <h2 class="role-card__title">Учитель</h2>
+              <p class="role-card__sub-title">Следите за учениками и ДЗ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Форма на родителя -->
+      <form action="" class="form" id="form-parents">
+        <h2 class="form__title">Родитель - Вход</h2>
+
+        <div class="form-field">
+          <label for="parent-fio" class="form-field__label">ФИО</label>
+          <input required type="text" id="parent-fio" class="form-field__input js-name" placeholder="Иванов Иван Иванович">
+
+          
+          <label for="parent-email" class="form-field__label">E-MAIL</label>
+          <input required type="email" id="parent-email" class="form-field__input js-email" placeholder="exemple@gmail.com">
+
+          <div class="password-wrapper js-password-wrapper" style="display: none;">
+            <label class="form-field__label password-label" for="pass-parents">ПАРОЛЬ</label>
+            <input type="password" id="pass-parents" class="form-field__input reg-password" placeholder="Пароль">
+          </div>
+        </div>
+        
+        <button class="form__btn" type="submit">Продолжить</button>
+      </form>
+
+      <!-- Форма на ученика -->
+      <form action="" class="form" id="form-student">
+        <h2 class="form__title">Ученик - Вход</h2>
+
+        <div class="form-field">
+          <label for="student-fio" class="form-field__label">ФИО</label>
+          <input required type="text" id="student-fio" class="form-field__input js-name" placeholder="Иванов Иван Иванович">
+
+          <label for="student-class" class="form-field__label">КЛАСС</label>
+          <input required type="text" id="student-class" class="form-field__input js-class-input" placeholder="9А">
+
+          <label for="student-email" class="form-field__label">E-MAIL</label>
+          <input required type="email" id="student-email" class="form-field__input js-email" placeholder="exemple@gmail.com">
+
+          <div class="password-wrapper js-password-wrapper" style="display: none;">
+            <label class="form-field__label password-label" for="pass-parents">ПАРОЛЬ</label>
+            <input type="password" id="pass-parents" class="form-field__input reg-password" placeholder="Пароль">
+          </div>
+        </div>
+        
+        <button class="form__btn" type="submit">Продолжить</button>
+      </form>
+
+      <!-- Форма на учителя -->
+      <form action="" class="form" id="form-teacher">
+        <h2 class="form__title">Учитель - Вход</h2>
+
+        <div class="form-field">
+          <label for="teacher-fio" class="form-field__label">ФИО</label>
+          <input required type="text" id="teacher-fio" class="form-field__input js-name" placeholder="Иванов Иван Иванович">
+
+          <label for="teacher-homeroom" class="form-field__label">КЛАСС ПОД РУКОВОДСТВОМ (Если есть)</label>
+          <input type="text" id="teacher-homeroom" class="form-field__input teacher-homeroom" placeholder="9А">
+
+          <label for="teacher-subject" class="form-field__label">ПРЕДМЕТ</label>
+          <select id="teacher-subject" name="subject" class="form-field__input">
+            <option value="Алгебра">Алгебра</option>
+            <option value="Биология">Биология</option>
+            <option value="Вероятность и статистика">Вероятность и статистика</option>
+            <option value="География">География</option>
+            <option value="Геометрия">Геометрия</option>
+            <option value="Изобразительное искусство">Изобразительное искусство</option>
+            <option value="Иностранный язык">Иностранный язык</option>
+            <option value="Информатика">Информатика</option>
+            <option value="История">История</option>
+            <option value="Литература">Литература</option>
+            <option value="Музыка">Музыка</option>
+            <option value="Обществознание">Обществознание</option>
+            <option value="Основы безопасности и защиты Родины (ОБЗР)">Основы безопасности и защиты Родины (ОБЗР)</option>
+            <option value="Русский язык">Русский язык</option>
+            <option value="Труд (технология)">Труд (технология)</option>
+            <option value="Физика">Физика</option>
+            <option value="Физическая культура">Физическая культура</option>
+            <option value="Химия">Химия</option>
+          </select>
+
+          <label for="teacher-email" class="form-field__label">E-MAIL</label>
+          <input required type="email" id="teacher-email" class="form-field__input js-email" placeholder="exemple@gmail.com">
+
+          <div class="password-wrapper js-password-wrapper" style="display: none;">
+            <label class="form-field__label password-label" for="pass-parents">ПАРОЛЬ</label>
+            <input type="password" id="pass-parents" class="form-field__input reg-password" placeholder="Пароль">
+          </div>
+        </div>
+        
+        <button class="form__btn" type="submit">Продолжить</button>
+      </form>
+    </section>
+
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../js/database-config.js"></script>
+
+
+  <script src="../../js/registration.js"></script>
+</body>
+</html>

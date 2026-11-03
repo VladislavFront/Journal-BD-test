@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../css/normalize.css">
+
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/points.css">
+
+  <link rel="stylesheet" href="../../css/adaptive/main-adaptive.css">
+  <link rel="stylesheet" href="../../css/adaptive/points-adaptive.css">
+
+  <title>Электронный журнал 40 || Оценки Ученика</title>
+</head>
+<body>
+
+<div class="burger">
+    <div class="burger__wrapper">
+      <div class="burger__top">
+        <div class="burger__help-container">
+          <div class="logo-container logo-container_burger">
+            <div class="logo-container__img"></div>
+            <div class="logo-text">
+              <div class="logo-text__title">Дневник</div>
+              <p class="logo-text__sub-title">Электронный журнал</p>
+            </div>
+          </div>
+          <div class="burger__top-container">
+            <div class="user-block">
+              <div class="user-block__avatar js-student-avatar"></div>
+              <div class="user-info">
+                <div class="user-info__name js-student-name"></div>
+                <p class="user-info__class js-student-class"></p>
+              </div>
+            </div>
+            <button class="header-right__btn-exit">Выйти</button>
+          </div>
+        </div>
+        <div class="burger__closed-btn" onclick="closedBurgerMenu()"></div>
+      </div>
+      <div class="burger__main">
+        <nav class="aside-nav">
+          <ul class="aside-nav__nav-list">
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="student.html" class="aside-nav__link"><img src="../../assets/diary.svg" alt="Дневник" class="aside-nav__link-logo">Дневник</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="schedule.html" class="aside-nav__link"><img src="../../assets/schedule.svg" alt="Расписание" class="aside-nav__link-logo">Расписание</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="points.html" class="aside-nav__link"><img src="../../assets/point.svg" alt="Оценки" class="aside-nav__link-logo">Оценки</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="homework.html" class="aside-nav__link"><img src="../../assets/homework.svg" alt="ДЗ" class="aside-nav__link-logo">ДЗ</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="announcements.html" class="aside-nav__link"><img src="../../assets/announcement.svg" alt="Объявления" class="aside-nav__link-logo">Объявления</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="messages.html" class="aside-nav__link"><img src="../../assets/message.svg" alt="Сообщения" class="aside-nav__link-logo">Сообщения</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="main-wrapper">
+      <div class="header-left">
+      <div class="logo-container">
+        <div class="logo-container__img"></div>
+        <!-- <img src="#" alt="Логотип школы номер 40" class="logo-container__img"> -->
+        <div class="logo-text">
+          <div class="logo-text__title">Дневник</div>
+          <p class="logo-text__sub-title">Электронный журнал</p>
+        </div>
+      </div>
+
+      <div class="header-search">
+        <input type="search" class="header-search__input" placeholder="Поиск по дневнику">
+      </div>
+      </div>
+
+      <div class="header-right">
+        <button class="header-right__btn-exit">Выйти</button>
+        <div class="user-block">
+          <div class="user-block__avatar js-student-avatar"></div>
+          <div class="user-info">
+            <div class="user-info__name js-student-name"></div>
+            <p class="user-info__class js-student-class"></p>
+          </div>
+        </div>
+        <div class="burger-button" onclick="openBurgerMenu()">
+          <span class="burger-button__span"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="main-content">
+      <aside class="left-panel sidebar">
+        <div class="aside-card aside-card_one">
+          <div class="user-block">
+            <div class="user-block__avatar js-student-avatar" id="student-avatar-text"></div>
+            <div class="user-info">
+              <div class="user-info__name js-student-name"></div>
+              <p class="user-info__class js-student-class"></p>
+            </div>
+          </div>
+          <div class="user-class-teacher">
+            <div class="user-class-teacher__title">Кл. руководитель</div>
+            <div class="user-class-teacher__sub-title js-student-class-teacher"></div>
+          </div>
+        </div>
+
+        <div class="aside-card aside-card_nav">
+          <nav class="aside-nav">
+            <ul class="aside-nav__nav-list">
+              <li class="aside-nav__list-item"><a href="student.html" class="aside-nav__link"><img src="../../assets/diary.svg" alt="Дневник" class="aside-nav__link-logo">Дневник</a></li>
+              <li class="aside-nav__list-item"><a href="schedule.html" class="aside-nav__link"><img src="../../assets/schedule.svg" alt="Расписание" class="aside-nav__link-logo">Расписание</a></li>
+              <li class="aside-nav__list-item"><a href="points.html" class="aside-nav__link"><img src="../../assets/point.svg" alt="Оценки" class="aside-nav__link-logo">Оценки</a></li>
+              <li class="aside-nav__list-item"><a href="homework.html" class="aside-nav__link"><img src="../../assets/homework.svg" alt="ДЗ" class="aside-nav__link-logo">ДЗ</a></li>
+              <li class="aside-nav__list-item"><a href="announcements.html" class="aside-nav__link"><img src="../../assets/announcement.svg" alt="Объявления" class="aside-nav__link-logo">Объявления</a></li>
+              <li class="aside-nav__list-item"><a href="messages.html" class="aside-nav__link"><img src="../../assets/message.svg" alt="Сообщения" class="aside-nav__link-logo">Сообщения</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="aside-card">
+          <div class="attendance">
+            <div class="attendance__title">Посещаемость за месяц</div>
+            <div class="attendance__progress-text">
+              <div class="attendance__percent">100%</div>
+              <!-- <div class="attendance__pass">0 пропусков</div> -->
+            </div>
+            <div class="attendance__progress-bar attendance__progress-bar_excellent"></div>
+            <div class="attendance__progress-text">
+              <div class="attendance__percent"></div>
+              <div class="attendance__pass">0 пропусков</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="center-panel">
+        <div class="work-block">
+          <h1 class="work-block__title">Оценки</h1>
+          <div class="work-block__select-container">
+            <select class="select-custom js-student-select-month">
+              <option value="1">Январь</option>
+              <option value="2">Февраль</option>
+              <option value="3">Март</option>
+              <option value="4">Апрель</option>
+              <option value="5">Май</option>
+              <option value="6">Июнь</option>
+              <option value="7">Июль</option>
+              <option value="8">Август</option>
+              <option value="9">Сентябрь</option>
+              <option value="10">Октябрь</option>
+              <option value="11">Ноябрь</option>
+              <option value="12">Декабрь</option>
+            </select>
+            <select class="select-custom">
+              <option value="I">I четверть</option>
+              <option value="II">II четверть</option>
+              <option value="III">III четверть</option>
+              <option value="IV">IV четверть</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="journal-container">
+          <table class="journal-table">
+            <thead>
+              <!-- Верхний уровень шапки с объединением ячеек -->
+              <tr>
+                  <th rowspan="2">Предмет</th>
+                  <th id="js-student-days-header">Числа месяца</th>
+                  <th rowspan="2" class="section-total">Итог</th>
+              </tr>
+              <tr id="js-student-days-row"></tr>
+            </thead>
+            <tbody id="js-student-grades-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../js/database-config.js"></script>
+
+  <script src="../../js/main.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+  <script src="../../js/search.js"></script>
+
+  <script src="../../js/student-ui.js"></script>
+  <script src="../../js/student-points.js"></script>
+</body>
+</html>

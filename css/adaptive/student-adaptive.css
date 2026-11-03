@@ -1,0 +1,159 @@
+@media (max-width: 1500px) {
+  .main {
+    flex-wrap: wrap;
+  }
+
+  .left-panel {
+    order: 1;
+  }
+
+  .center-panel {
+    order: 2;
+    flex: 1;
+  }
+
+  .right-panel {
+    order: 3;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .aside-card_right {
+    width: 100%;
+  }
+
+  .grade-card {
+    width: calc(100% / 4);
+    row-gap: 30px;
+    padding: 0 0 30px 0;
+  }
+
+  .grade-card__title {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grade-card {
+    row-gap: 15px;
+    padding: 0 0 15px 0;
+  }
+
+  .grade-card__title {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 650px) {
+  .days-down {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(80px, 1fr));
+    gap: 15px;
+
+    /* flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px; */
+  }
+
+  .days-down__day-card {
+    width: 100%;
+    /* width: calc(100% / 3.2); */
+  }
+
+  .export-btn {
+    display: none;
+  }
+
+  .export-container > .export-btn {
+    display: block;
+    width: 100%;
+  }
+
+  .export-container {
+    width: 100%;
+    display: flex;
+    /* flex-direction: row-reverse; */
+    margin-top: 50px;
+    column-gap: 30px;
+  }
+
+  .schedule-week {
+    margin-top: 15px;
+  }
+
+  .schedule-header {
+    align-items: flex-start;
+  }
+
+  .schedule-header__info-day {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    
+    
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .schedule-right__homework-text {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .schedule-right__title {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .schedule-left__number {
+    width: 30px;
+    height: 30px;
+  }
+
+  .schedule-left {
+    margin-right: 30px;
+  }
+
+  .schedule-header__rait-container {
+    margin-right: 0px;
+  }
+
+  .result-upgrade {
+    column-gap: 5px;
+  }
+
+  .result-week__title,
+  .events-title {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .result-upgrade__sub-title {
+    font-size: calc(var(--text-size-main-title) * var(--text-scale-md));
+  }
+
+  .result-upgrade__percent {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .academic-performance-card__title {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .academic-performance-card__text-title,
+  .academic-performance-card__text-sub-title {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .events-info__date {
+    padding: 10px;
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+}
+
+@media (max-width: 500px) {
+  .schedule-header__rait-container {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-left: 30px;
+  }
+}
+

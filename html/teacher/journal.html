@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../css/normalize.css">
+
+  <link rel="stylesheet" href="../../css/main.css">
+  <!-- <link rel="stylesheet" href="../../css/student.css"> -->
+  <link rel="stylesheet" href="../../css/journal.css">
+
+  <link rel="stylesheet" href="../../css/adaptive/main-adaptive.css">
+  <!-- <link rel="stylesheet" href="../../css/adaptive/student-adaptive.css"> -->
+  <link rel="stylesheet" href="../../css/adaptive/journal-adaptive.css">
+
+  <title>Электронный журнал 40 || Дневник Учителя</title>
+</head>
+<body>
+
+  <div class="burger">
+    <div class="burger__wrapper">
+      <div class="burger__top">
+        <div class="burger__help-container">
+          <div class="logo-container logo-container_burger">
+            <div class="logo-container__img"></div>
+            <div class="logo-text">
+              <div class="logo-text__title">Дневник</div>
+              <p class="logo-text__sub-title">Электронный журнал</p>
+            </div>
+          </div>
+          <div class="burger__top-container">
+            <div class="user-block">
+              <div class="user-block__avatar js-teacher-avatar"></div>
+              <div class="user-info">
+                <div class="user-info__name js-teacher-name"></div>
+                <p class="user-info__class js-teacher-subject"></p>
+                <!-- <p class="user-info__class">9A класс</p> -->
+              </div>
+            </div>
+            <button class="header-right__btn-exit">Выйти</button>
+          </div>
+        </div>
+        <div class="burger__closed-btn" onclick="closedBurgerMenu()"></div>
+      </div>
+      <div class="burger__main">
+        <nav class="aside-nav">
+          <ul class="aside-nav__nav-list">
+            <li class="aside-nav__list-item"><a href="journal.html" class="aside-nav__link"><img src="../../assets/diary.svg" alt="Дневник" class="aside-nav__link-logo">Журнал класса</a></li>
+            <li class="aside-nav__list-item"><a href="schedule-week.html" class="aside-nav__link"><img src="../../assets/schedule.svg" alt="Расписание" class="aside-nav__link-logo">Расписание на неделю</a></li>
+            <li class="aside-nav__list-item"><a href="homework.html" class="aside-nav__link"><img src="../../assets/homework.svg" alt="Оценки" class="aside-nav__link-logo">Выставление ДЗ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="main-wrapper">
+      <div class="header-left">
+      <div class="logo-container">
+        <div class="logo-container__img"></div>
+        <!-- <img src="#" alt="Логотип школы номер 40" class="logo-container__img"> -->
+        <div class="logo-text">
+          <div class="logo-text__title">Дневник</div>
+          <p class="logo-text__sub-title">Электронный журнал</p>
+        </div>
+      </div>
+
+      <div class="header-search">
+        <input type="search" class="header-search__input" placeholder="Поиск по дневнику">
+      </div>
+      </div>
+
+      <div class="header-right">
+        <button class="header-right__btn-exit">Выйти</button>
+        <div class="user-block">
+          <div class="user-block__avatar js-teacher-avatar"></div>
+          <div class="user-info">
+            <div class="user-info__name js-teacher-name"></div>
+            <p class="user-info__class js-teacher-subject"></p>
+          </div>
+        </div>
+        <div class="burger-button" onclick="openBurgerMenu()">
+          <span class="burger-button__span"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="main-content">
+      <aside class="left-panel sidebar">
+        <div class="aside-card aside-card_one">
+          <div class="user-block">
+            <div class="user-block__avatar js-teacher-avatar"></div>
+            <div class="user-info">
+              <div class="user-info__name js-teacher-name"></div>
+              <p class="user-info__class user-class-teacher__sub-title js-teacher-subject"></p>
+            </div>
+          </div>
+          <div class="user-class-teacher">
+            <div class="user-class-teacher__title">Кл. руководитель</div>
+            <div class="user-class-teacher_sub-title js-teacher-lead"></div>
+          </div>
+        </div>
+
+        <div class="aside-card aside-card_nav">
+          <nav class="aside-nav">
+            <ul class="aside-nav__nav-list">
+              <li class="aside-nav__list-item"><a href="journal.html" class="aside-nav__link"><img src="../../assets/diary.svg" alt="Дневник" class="aside-nav__link-logo">Журнал класса</a></li>
+              <li class="aside-nav__list-item"><a href="schedule-week.html" class="aside-nav__link"><img src="../../assets/schedule.svg" alt="Расписание" class="aside-nav__link-logo">Расписание на неделю</a></li>
+              <li class="aside-nav__list-item"><a href="homework.html" class="aside-nav__link"><img src="../../assets/homework.svg" alt="Оценки" class="aside-nav__link-logo">Выставление ДЗ</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <div class="center-panel">
+        <div class="work-block">
+          <h1 class="work-block__title">Работа с журналом</h1>
+          <div class="work-block__select-container">
+            <select class="select-custom js-select-month">
+              <option value="1">Январь</option>
+              <option value="2">Февраль</option>
+              <option value="3">Март</option>
+              <option value="4">Апрель</option>
+              <option value="5">Май</option>
+              <option value="6">Июнь</option>
+              <option value="7">Июль</option>
+              <option value="8">Август</option>
+              <option value="9">Сентябрь</option>
+              <option value="10">Октябрь</option>
+              <option value="11">Ноябрь</option>
+              <option value="12">Декабрь</option>
+            </select>
+            <select class="select-custom">
+              <option value="I">I четверть</option>
+              <option value="II">II четверть</option>
+              <option value="III">III четверть</option>
+              <option value="IV">IV четверть</option>
+            </select>
+            <select class="select-custom js-select-class">
+              <!-- 1 классы -->
+              <option value="1">1 «А» класс</option>
+              <option value="2">1 «Б» класс</option>
+              <option value="3">1 «В» класс</option>
+              <option value="4">1 «Г» класс</option>
+
+              <!-- 2 классы -->
+              <option value="5">2 «А» класс</option>
+              <option value="6">2 «Б» класс</option>
+              <option value="7">2 «В» класс</option>
+              <option value="8">2 «Г» класс</option>
+
+              <!-- 3 классы -->
+              <option value="9">3 «А» класс</option>
+              <option value="10">3 «Б» класс</option>
+              <option value="11">3 «В» класс</option>
+              <option value="12">3 «Г» класс</option>
+
+              <!-- 4 классы -->
+              <option value="13">4 «А» класс</option>
+              <option value="14">4 «Б» класс</option>
+              <option value="15">4 «В» класс</option>
+              <option value="16">4 «Г» класс</option>
+
+              <!-- 5 классы -->
+              <option value="17">5 «А» класс</option>
+              <option value="18">5 «Б» класс</option>
+              <option value="19">5 «В» класс</option>
+              <option value="20">5 «Г» класс</option>
+
+              <!-- 6 классы -->
+              <option value="21">6 «А» класс</option>
+              <option value="22">6 «Б» класс</option>
+              <option value="23">6 «В» класс</option>
+              <option value="24">6 «Г» класс</option>
+
+              <!-- 7 классы -->
+              <option value="25">7 «А» класс</option>
+              <option value="26">7 «Б» класс</option>
+              <option value="27">7 «В» класс</option>
+              <option value="28">7 «Г» класс</option>
+
+              <!-- 8 классы -->
+              <option value="29">8 «А» класс</option>
+              <option value="30">8 «Б» класс</option>
+              <option value="31">8 «В» класс</option>
+              <option value="32">8 «Г» класс</option>
+
+              <!-- 9 классы -->
+              <option value="33">9 «А» класс</option>
+              <option value="34">9 «Б» класс</option>
+              <option value="35">9 «В» класс</option>
+              <option value="36">9 «Г» класс</option>
+
+              <!-- 10 классы -->
+              <option value="37">10 «А» класс</option>
+              <option value="38">10 «Б» класс</option>
+              <option value="39">10 «В» класс</option>
+              <option value="40">10 «Г» класс</option>
+
+              <!-- 11 классы -->
+              <option value="41">11 «А» класс</option>
+              <option value="42">11 «Б» класс</option>
+              <option value="43">11 «В» класс</option>
+              <option value="44">11 «Г» класс</option>
+            </select>
+            <button class="select-submit js-btn-save">Сохранить</button>
+          </div>
+        </div>
+
+        <div class="table-scroll-container">
+          <table class="month-table">
+            <thead>
+              <tr>
+                <th rowspan="2" class="sticky-col-num">№</th>
+                <th rowspan="2" class="sticky-col-name">ФИО Ученика</th>
+                <!-- <th colspan="31" class="section-marks">Числа месяца</th> -->
+                 <th id="js-month-days-header">Числа месяца</th>
+                <th rowspan="2" class="sticky-col-result">Итог</th>
+              </tr>
+              <tr id="js-days-numbers-row"></tr>
+              <!-- <tr>
+                <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+                <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+                <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th>
+              </tr> -->
+            </thead>
+            <!-- <thead>
+              <tr>
+                <th class="sticky-col-num">№</th>
+                <th class="sticky-col-name">ФИО Ученика</th>
+                <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+                <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+                <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th>
+                <th class="sticky-col-result">Итог</th>
+              </tr>
+            </thead> -->
+            <tbody id="js-journal-tbody"></tbody>
+
+            <!-- <tbody>
+              <tr>
+                <td class="sticky-col-num">1</td>
+                <td class="sticky-col-name">Алексеев Максим В.</td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="day-cell-select mark-5" value="" name="grade" data-student-id="">
+                    <option value="empty" selected disabled hidden></option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="Н">Н</option>
+                    <option value="У">У</option>
+                    <option value="Б">Б</option>
+                  </select>
+                </td>
+                <td class="total-column">
+                  И.О.
+                </td>
+              </tr>
+            </tbody> -->
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../js/database-config.js"></script>
+
+  <script src="../../js/main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+  <script src="../../js/search.js"></script>
+
+  <script src="../../js/teacher-ui.js"></script>
+  <script src="../../js/journal.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+@media (max-width: 1000px) {
+  .main {
+    padding: 15px;
+  }
+
+  .center-panel {
+    padding: 0;
+    position: sticky;
+  }
+
+  .left-panel {
+    display: none;
+  }
+
+  .header-left > .logo-container {
+    display: none;
+  }
+
+  .header-right > .header-right__btn-exit {
+    display: none;
+  }
+
+  .header-right > .user-block {
+    display: none;
+  }
+
+  .burger-button {
+    display: flex; /* flex - видно, none - не видно */
+  }
+
+  .main-header__title {
+    font-size: calc(var(--text-size-main-title) * var(--text-scale-md));
+  }
+
+  .export-btn {
+    width: 100px;
+    padding: 15px;
+    font-size: calc(var(--text-size-sub-text) * var(--text-scale-md));
+  }
+
+  .main-header__sub-title {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+    column-gap: 8px;
+  }
+
+  .days-up__period {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .days-down__day-card {
+    height: 70px;
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .schedule-header__title,
+  .schedule-header__count-lesson {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .schedule-left__time {
+    font-size: var(--text-size-sub-text);
+  }
+}
+
+@media (max-width: 550px) {
+  .logo-container__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-text__title {
+    font-size: calc(var(--text-size-main-text)* var(--text-scale-md));
+  }
+
+  .logo-text__sub-title {
+    font-size: calc(var(--text-size-sub-text)* var(--text-scale-md));
+  }
+}
+
+
+/* Печатные стили */
+
+@media print {
+  header, 
+  aside, 
+  .sidebar, 
+  .search-input, 
+  button, 
+  .print-btn, 
+  .pdf-btn, 
+  .btn-exit {
+    display: none !important;
+  }
+
+  html, body {
+    background: var(--text-color-dark) !important;
+    color: var(--text-color-light) !important;
+    font-family: "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 11pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  main, 
+  .content, 
+  .diary-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: var(--text-color-dark) !important;
+  }
+
+  .searchable-item, 
+  .subject-card, 
+  div[class*="card"], 
+  tr, td {
+    background: #ffffff !important;
+    color: var(--text-color-light) !important;
+    border: 1px solid #e0e0e0 !important;
+    box-shadow: none !important;
+    margin-bottom: 10px !important;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, .subject-name, .day-title {
+    color: var(--text-color-light) !important;
+  }
+
+  .mark, span[class*="grade"] {
+    color: var(--text-color-light) !important;
+    font-weight: bold !important;
+    border: 1px solid var(--text-color-light) !important;
+    padding: 2px 6px !important;
+  }
+}

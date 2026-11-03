@@ -1,0 +1,302 @@
+body {
+  overflow-x: hidden;
+}
+
+.center-panel {
+  width: calc(100% - 300px);
+  padding-right: 15px;
+}
+
+.work-block {
+  width: 100%;
+}
+
+.work-block__title {
+  font-size: var(--text-size-main-title);
+}
+
+.work-block__select-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.select-custom,
+.input-date-custom {
+  padding: 10px;
+  border: 1px solid var(--no-active-color-dark);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-card-dark);
+  color: var(--text-color-dark);
+  font-size: var(--text-size-sub-text);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.select-custom:focus,
+.input-date-custom:focus {
+  outline: none;
+  border: 1px solid var(--icon-color-dark);
+}
+
+.select-custom option {
+  background-color: var(--bg-card-dark);
+  color: var(--text-color-dark);
+}
+
+.select-hw {
+  width: 125px;
+}
+
+.table-scroll-container {
+  width: 100%;
+  margin-top: 50px;
+  overflow-x: auto;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--no-active-color-dark);
+}
+
+.month-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--text-size-main-text);
+  color: var(--text-color-dark);
+}
+
+.month-table th, .month-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--no-active-color-dark);
+  border-right: 1px solid var(--no-active-color-dark);
+  text-align: center;
+  vertical-align: middle;
+  min-width: 40px;
+  font-size: var(--text-size-main-text);
+}
+
+.sticky-col-num {
+  position: sticky;
+  left: 0;
+  background-color: var(--bg-card-dark);
+  color: var(--no-active-color-dark);
+  z-index: 10;
+  width: 40px;
+  min-width: 40px;
+}
+
+.sticky-col-name {
+  position: sticky;
+  left: 40px;
+  background-color: var(--bg-card-dark);
+  z-index: 10;
+  text-align: left !important;
+  min-width: 220px !important;
+  width: 220px;
+  font-weight: 500;
+  border-left: 0.1px solid var(--no-active-color-dark) !important;
+}
+
+.month-table th {
+  background-color: var(--bg-card-dark);
+  font-weight: 600;
+  color: var(--no-active-color-dark);
+  border-bottom: 1px solid var(--no-active-color-dark);
+}
+
+.month-table th.sticky-col-name, .month-table th.sticky-col-num {
+  background-color: var(--bg-card-dark);
+}
+
+.day-cell-select {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  text-align: center;
+  background-color: transparent;
+  color: var(--text-color-dark);
+  cursor: pointer;
+  font-size: var(--text-size-sub-text);
+  transition: var(--transition);
+  -webkit-appearance: none;
+  -moz-appearance: none; 
+  appearance: none; 
+}
+
+.day-cell-select:hover {
+  background-color: var(--active-color-dark);
+}
+
+.day-cell-select:focus {
+  border-color: var(--icon-color-dark);
+  outline: none;
+  background-color: var(--active-color-dark);
+}
+
+.day-cell-select option {
+  background-color: var(--bg-card-dark);
+  color: var(--text-color-dark);
+  font-weight: bold;
+}
+
+
+/* Уникальные стили для страницы с шаблонным расписанием */
+.time-inputs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.select-submit {
+  padding: 15px;
+  cursor: pointer;
+  background-color: var(--bg-color-dark);
+  color: var(--no-active-color-dark);
+  font-size: var(--text-size-sub-text);
+  border: 1px solid var(--no-active-color-dark);
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+}
+
+.select-submit:hover {
+  color: var(--text-color-dark);
+  border-color: var(--icon-color-dark);
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.day-card {
+  padding: 50px 0px 0 0 !important;
+}
+
+.day-title {
+  font-size: var(--text-size-title);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--text-color-dark);
+  border-bottom: 1px solid var(--no-active-color-dark);
+  padding-bottom: 8px;
+}
+
+.lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lesson-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lesson-num {
+  width: 50px !important;
+  font-size: var(--text-size-sub-text);
+  color: var(--no-active-color-dark);
+  width: 15px;
+  font-weight: bold;
+}
+
+.input-time {
+  width: 80px;
+  padding: 8px;
+  border: 1px solid var(--no-active-color-dark);
+  border-radius: 6px;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  font-size: var(--text-size-sub-text);
+  text-align: center;
+}
+
+.subject-name {
+  flex: 1;
+}
+
+.input-subject {
+  width: 100%;
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--no-active-color-dark);
+  border-radius: 6px;
+  background-color: var(--bg-card-dark);
+  color: var(--text-color-dark);
+  font-size: var(--text-size-sub-text);
+}
+
+.input-subject:focus, .input-time:focus {
+  border-color: var(--icon-color-dark);
+  outline: none;
+}
+
+/* Уникальные стили для страницы выставления оценок */
+.grading-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 50px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #828282;
+  font-weight: 500;
+}
+
+.textarea-custom {
+  padding: 12px;
+  border: 1px solid var(--no-active-color-dark);
+  border-radius: 8px;
+  background-color: var(--bg-card-dark);
+  color: var(--no-active-color-dark);
+  font-family: inherit;
+  font-size: var(--text-size-sub-text);
+  font-weight: 100;
+  resize: vertical;
+  min-height: 300px;
+  transition: var(--transition);
+}
+
+.textarea-custom:focus {
+  border-color: var(--icon-color-dark);
+  color: var(--text-color-dark);
+  outline: none;
+}
+
+.input-comment {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  border: 1px solid var(--no-active-color-dark);
+  border-radius: 6px;
+  background-color: var(--bg-card-dark);
+  color: var(--no-active-color-dark);
+  font-size: var(--text-size-sub-text);
+  font-weight: 100;
+  transition: var(--transition);
+}
+
+.input-comment:focus {
+  border-color: var(--icon-color-dark);
+  color: var(--text-color-dark);
+  outline: none;
+}

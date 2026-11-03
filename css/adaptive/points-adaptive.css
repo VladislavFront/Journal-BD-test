@@ -1,0 +1,6 @@
+@media (max-width: 750px) {
+  .journal-table th, .journal-table td {
+    padding: 5px;
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+}

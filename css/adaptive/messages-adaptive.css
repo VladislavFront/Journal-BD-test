@@ -1,0 +1,75 @@
+
+
+@media (max-width: 1000px) {
+  
+  .messages-header__title {
+  font-size: var(--text-scale-md);
+  }
+  
+  .messages-header__title {
+    font-size: calc(var(--text-size-main-title) * var(--text-scale-md));
+  }
+
+  .messages-header__btn-create {
+    font-size: calc(var(--text-size-sub-text) * var(--text-scale-md));
+  }
+  
+  .message__header {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .message__title {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .message__date {
+    font-size: calc(var(--text-size-sub-text) * var(--text-scale-md));
+  }
+
+  .message__text {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .message__return-title {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .message__return-text {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .modal-window__title {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .form-field__select,
+  .form-field__input,
+  .form-field__textarea {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  
+  .form-btn {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .message {
+    padding: 15px;
+  }
+  
+}
+
+@media (max-width: 450px) {
+
+  .messages-header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    row-gap: 15px;
+  }
+
+}

@@ -1,0 +1,62 @@
+@media (max-width: 1000px) {
+  .center-panel {
+    width: 100%;
+  }
+
+  .work-block {
+    width: 100%;
+  }
+
+  .work-block__title {
+    font-size: calc(var(--text-size-main-title) * var(--text-scale-md))
+  }
+
+  .work-block__select-container {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .select-custom {
+    font-size: var(var(--text-size-sub-text) * var(--text-scale-md));
+  }
+
+  .select-submit {
+    font-size: calc(var(--text-size-sub-text) * var(--text-scale-md));
+  }
+
+  .day-title {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+}
+
+@media (max-width: 750px) {
+  .month-table th, .month-table td {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .lesson-num {
+    width: 30px !important;
+  }
+
+  .time-inputs {
+    gap: 5px;
+  }
+
+  .input-time {
+    width: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sticky-col-name {
+    min-width: 100px !important;
+  }
+
+  /* .days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  } */
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/main.css">
+
+  <link rel="stylesheet" href="../../css/select-child.css">
+
+  <link rel="stylesheet" href="../../css/adaptive/main-adaptive.css">
+  <link rel="stylesheet" href="../../css/adaptive/select-child-adaptive.css">
+
+  <title>Электронный журнал 40 || Дневник Родителя</title>
+</head>
+<body>
+
+  <div class="modal" id="addModal">
+    <div class="modal-content">
+      <h3>Привязка нового ребенка</h3>
+      <p>Введите уникальный код привязки из дневника вашего ребенка</p>
+      <input type="text" id="childCodeInput" class="modal-input" placeholder="Например: XYZ-789" autocomplete="off">
+      <div class="modal-buttons">
+          <button class="btn-submit" id="btnSubmitCode">Привязать</button>
+          <button class="btn-cancel" id="btnCancelModal">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="children-container" id="children-container">
+
+      <!-- <div class="child-card" onclick="selectChild('student_1')">
+        <div class="child-avatar">👨‍🎓</div>
+        <div class="child-name">Иванов Иван</div>
+        <div class="child-class">10-А класс</div>
+      </div> -->
+
+      <div class="child-card add-card" id="addChildBtn">
+          <!-- <div class="child-avatar">➕</div> -->
+          <div class="child-avatar">+</div>
+          <div class="child-name">Добавить ребенка</div>
+          <div class="child-class">по коду привязки</div>
+      </div>
+
+    </div>
+    <button class="logout-btn" id="logoutBtn">Выйти из аккаунта</button>
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../js/database-config.js"></script>
+
+  <script src="../../js/main.js"></script>
+
+  <script src="../../js/select-child.js"></script>
+</body>
+</html>

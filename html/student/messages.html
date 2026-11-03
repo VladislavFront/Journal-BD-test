@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../css/normalize.css">
+
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/student.css">
+  <link rel="stylesheet" href="../../css/messages.css">
+
+  <link rel="stylesheet" href="../../css/adaptive/main-adaptive.css">
+  <link rel="stylesheet" href="../../css/adaptive/student-adaptive.css">
+  <link rel="stylesheet" href="../../css/adaptive/messages-adaptive.css">
+
+  <title>Электронный журнал 40 || Дневник Ученика</title>
+</head>
+<body>
+
+<div class="burger">
+    <div class="burger__wrapper">
+      <div class="burger__top">
+        <div class="burger__help-container">
+          <div class="logo-container logo-container_burger">
+            <div class="logo-container__img"></div>
+            <div class="logo-text">
+              <div class="logo-text__title">Дневник</div>
+              <p class="logo-text__sub-title">Электронный журнал</p>
+            </div>
+          </div>
+          <div class="burger__top-container">
+            <div class="user-block">
+              <div class="user-block__avatar js-student-avatar"></div>
+              <div class="user-info">
+                <div class="user-info__name js-student-name"></div>
+                <p class="user-info__class js-student-class"></p>
+              </div>
+            </div>
+            <button class="header-right__btn-exit">Выйти</button>
+          </div>
+        </div>
+        <div class="burger__closed-btn" onclick="closedBurgerMenu()"></div>
+      </div>
+      <div class="burger__main">
+        <nav class="aside-nav">
+          <ul class="aside-nav__nav-list">
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="student.html" class="aside-nav__link"><img src="../../assets/diary.svg" alt="Дневник" class="aside-nav__link-logo">Дневник</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="schedule.html" class="aside-nav__link"><img src="../../assets/schedule.svg" alt="Расписание" class="aside-nav__link-logo">Расписание</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="points.html" class="aside-nav__link"><img src="../../assets/point.svg" alt="Оценки" class="aside-nav__link-logo">Оценки</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="homework.html" class="aside-nav__link"><img src="../../assets/homework.svg" alt="ДЗ" class="aside-nav__link-logo">ДЗ</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="announcements.html" class="aside-nav__link"><img src="../../assets/announcement.svg" alt="Объявления" class="aside-nav__link-logo">Объявления</a></li>
+            <li class="aside-nav__list-item aside-nav__list-item_burger"><a href="messages.html" class="aside-nav__link"><img src="../../assets/message.svg" alt="Сообщения" class="aside-nav__link-logo">Сообщения</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="main-wrapper">
+      <div class="header-left">
+      <div class="logo-container">
+        <div class="logo-container__img"></div>
+        <!-- <img src="#" alt="Логотип школы номер 40" class="logo-container__img"> -->
+        <div class="logo-text">
+          <div class="logo-text__title">Дневник</div>
+          <p class="logo-text__sub-title">Электронный журнал</p>
+        </div>
+      </div>
+
+      <div class="header-search">
+        <input type="search" class="header-search__input" placeholder="Поиск по дневнику">
+      </div>
+      </div>
+
+      <div class="header-right">
+        <button class="header-right__btn-exit">Выйти</button>
+        <div class="user-block">
+          <div class="user-block__avatar js-student-avatar"></div>
+          <div class="user-info">
+            <div class="user-info__name js-student-name"></div>
+            <p class="user-info__class js-student-class"></p>
+          </div>
+        </div>
+        <div class="burger-button" onclick="openBurgerMenu()">
+          <span class="burger-button__span"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="main-content">
+      <aside class="left-panel sidebar">
+        <div class="aside-card aside-card_one">
+          <div class="user-block">
+            <div class="user-block__avatar js-student-avatar" id="student-avatar-text"></div>
+            <div class="user-info">
+              <div class="user-info__name js-student-name"></div>
+              <p class="user-info__class js-student-class"></p>
+            </div>
+          </div>
+          <div class="user-class-teacher">
+            <div class="user-class-teacher__title">Кл. руководитель</div>
+            <div class="user-class-teacher__sub-title js-student-class-teacher"></div>
+          </div>
+        </div>
+
+        <div class="aside-card aside-card_nav">
+          <nav class="aside-nav">
+            <ul class="aside-nav__nav-list">
+              <li class="aside-nav__list-item"><a href="student.html" class="aside-nav__link"><img src="../../assets/diary.svg" alt="Дневник" class="aside-nav__link-logo">Дневник</a></li>
+              <li class="aside-nav__list-item"><a href="schedule.html" class="aside-nav__link"><img src="../../assets/schedule.svg" alt="Расписание" class="aside-nav__link-logo">Расписание</a></li>
+              <li class="aside-nav__list-item"><a href="points.html" class="aside-nav__link"><img src="../../assets/point.svg" alt="Оценки" class="aside-nav__link-logo">Оценки</a></li>
+              <li class="aside-nav__list-item"><a href="homework.html" class="aside-nav__link"><img src="../../assets/homework.svg" alt="ДЗ" class="aside-nav__link-logo">ДЗ</a></li>
+              <li class="aside-nav__list-item"><a href="announcements.html" class="aside-nav__link"><img src="../../assets/announcement.svg" alt="Объявления" class="aside-nav__link-logo">Объявления</a></li>
+              <li class="aside-nav__list-item"><a href="messages.html" class="aside-nav__link"><img src="../../assets/message.svg" alt="Сообщения" class="aside-nav__link-logo">Сообщения</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="aside-card">
+          <div class="attendance">
+            <div class="attendance__title">Посещаемость за месяц</div>
+            <div class="attendance__progress-text">
+              <div class="attendance__percent">100%</div>
+              <!-- <div class="attendance__pass">0 пропусков</div> -->
+            </div>
+            <div class="attendance__progress-bar attendance__progress-bar_excellent"></div>
+            <div class="attendance__progress-text">
+              <div class="attendance__percent"></div>
+              <div class="attendance__pass">0 пропусков</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="center-panel">
+        <div class="messages-content">
+          <div class="messages-header">
+            <h1 class="messages-header__title">Сообщения</h1>
+            <button id="open-modal-btn" class="messages-header__btn-create">Создать обращение</button>
+          </div>
+          <div id="messages-container" class="messages-container">
+
+
+            <div class="message message_excellent">
+              <div class="message__header">
+                <p class="message__recipient">Кому: Орлова Т. С. (Классный рук.)</p>
+                <div class="message_status message_status_excellent">Рассмотрено</div>
+              </div>
+              <div class="message__body">
+                <div class="message__info-group">
+                  <h2 class="message__title">Тема: Сдача проектной папки по индивидуальному проекту</h2>
+                  <p class="message__date">Вчера, 16:45</p>
+                </div>
+                <p class="message__text">Ваш текст: Здравствуйте. Я заканчиваю верстку интерфейса на чистом HTML/CSS/JS. Завтра принесу готовую работу на флешке.</p>
+              </div>
+              <div class="message__return">
+                <h3 class="message__return-title">Официальный ответ:</h3>
+                <p class="message__return-text">Здравствуй, Анна. Отличные новости. Жду тебя на 4-й перемене в кабинете 305 для проверки материалов.</p>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div id="ticket-modal" class="modal-overlay">
+        <div class="modal-window">
+          <h2 class="modal-window__title">Новое официальное обращение</h2>
+        
+          <form id="ticket-form" class="modal-form">
+            <div class="form-field">
+              <label class="form-field__label">Адресат заявления:</label>
+              <select id="ticket-recipient" class="form-field__select">
+                <option value="Администрация (Директор)">Администрация (Директор школы)</option>
+                <option value="Орлова Т. С. (Классный рук.)">Орлова Т. С. (Классный руководитель)</option>
+                <option value="Иванов В. А. (Учитель физики)">Иванов В. А. (Учитель физики)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label">Тема обращения:</label>
+              <input type="text" id="ticket-subject" placeholder="Например: Сдача проекта, Пропуск уроков..." class="form-field__input" required autocomplete="off">
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label">Текст обращения:</label>
+              <textarea id="ticket-text" placeholder="Изложите суть вашего заявления в деловом стиле..." class="form-field__textarea" required></textarea>
+            </div>
+
+            <div class="modal-form__actions">
+              <button type="button" id="close-modal-btn" class="form-btn form-btn_cancel">Отмена</button>
+              <button type="submit" class="form-btn form-btn_submit">Отправить заявление</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../js/database-config.js"></script>
+  
+  <script src="../../js/main.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+  <script src="../../js/search.js"></script>
+
+  <script src="../../js/student-ui.js"></script>
+</body>
+</html>

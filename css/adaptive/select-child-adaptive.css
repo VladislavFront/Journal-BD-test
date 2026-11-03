@@ -1,0 +1,46 @@
+@media (max-width: 1050px) {
+
+  .modal-content > h3 {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .modal-content > p {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .children-container {
+    gap: 30px;
+  }
+
+  .child-card {
+    font-size: calc(var(--text-size-title) * var(--text-scale-md));
+  }
+
+  .child-avatar {
+    width: 75px;
+    height: 75px;
+    font-size: calc(var(--text-size-main-title) * var(--text-scale-md));
+  }
+
+  .child-class {
+    font-size: calc(var(--text-size-main-text) * var(--text-scale-md));
+  }
+
+  .logout-btn {
+    font-size: calc(var(--text-size-sub-text) * var(--text-scale-md));
+  }
+}
+
+@media (max-width: 500px) {
+
+  .modal-content {
+    width: 300px;
+  }
+
+  .child-card {
+    width: 290px;
+    gap: 30px;
+    padding: 30px;
+  }
+ 
+}
