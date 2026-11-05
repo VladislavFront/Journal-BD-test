@@ -283,6 +283,18 @@
   background-color: var(--horrible-color-dark);
 }
 
+.schedule-header__point_absence-excellent {
+  background-color: var(--excellent-color-dark);
+}
+
+.schedule-header__point_absence-good {
+  background-color: var(--good-color-dark);
+}
+
+.schedule-header__point_absence-horrible {
+  background-color: var(--horrible-color-dark);
+}
+
 .schedule-right__homework {
   margin-top: 25px;
 }
@@ -298,7 +310,20 @@
   font-weight: 100;
 }
 
+.schedule-right__homework-link {
+  color: var(--sub-text-color-dark);
+  font-size: var(--text-size-main-text);
+  font-weight: 100;
+  transition: var(--transition);
+}
 
+.schedule-right__homework-link:hover {
+  color: var(--icon-color-dark);
+}
+
+/* .schedule-right__homework-link:visited {
+  color: var(--icon-color-dark);
+} */
 
 
 

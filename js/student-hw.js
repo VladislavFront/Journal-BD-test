@@ -1,14 +1,10 @@
-// === АВТОНОМНЫЙ МОДУЛЬ ДОМАШНИХ ЗАДАНИЙ ДЛЯ ДНЕВНИКА ===
-
 async function loadDiaryHomework() {
   const diaryContainer = document.getElementById("journal-container");
-  if (!diaryContainer) return; // Защита: выходим, если это не страница дневника
+  if (!diaryContainer) return;
 
-  // Находим сгенерированные дни (только если они есть на экране)
   const dayBlocks = diaryContainer.querySelectorAll('.schedule-week');
   if (dayBlocks.length === 0) return; 
-  
-  // ИСПРАВЛЕНО: Корректно берем первый и последний заголовки из коллекции дней
+
   const firstHeader = dayBlocks[0].querySelector('.schedule-header__sub-title');
   const lastHeader = dayBlocks[dayBlocks.length - 1].querySelector('.schedule-header__sub-title');
   
@@ -17,7 +13,6 @@ async function loadDiaryHomework() {
   const firstDayText = firstHeader.textContent.trim();
   const lastDayText = lastHeader.textContent.trim();
 
-  // Вытаскиваем рабочий год проекта (2026) из глобального заголовка
   const weekTitleText = document.getElementById("week-title")?.textContent || "";
   const yearMatch = weekTitleText.match(/\d{4}/);
   const currentYear = yearMatch ? yearMatch[0] : "2026";
@@ -28,7 +23,6 @@ async function loadDiaryHomework() {
   const startDate = `${currentYear}-${startMonth}-${startDay}`;
   const endDate = `${currentYear}-${endMonth}-${endDay}`;
 
-  // Узнаем class_id (для ученика или выбранного ребенка родителя)
   const { data: { user } } = await db.auth.getUser();
   if (!user) return;
 
@@ -45,7 +39,6 @@ async function loadDiaryHomework() {
 
   if (!classId) return;
 
-  // Запрашиваем ДЗ из Supabase на этот диапазон дат
   const { data: homeworkList, error } = await db
     .from('homework')
     .select('homework_date, subject_name, description, material_link')
@@ -58,7 +51,6 @@ async function loadDiaryHomework() {
     return;
   }
 
-  // Раскладываем ДЗ по ячейкам уроков
   dayBlocks.forEach((dayBlock) => {
     const subTitle = dayBlock.querySelector('.schedule-header__sub-title').textContent.trim();
     const [d, m] = subTitle.split('.');
@@ -66,12 +58,10 @@ async function loadDiaryHomework() {
 
     const dayHomeworks = (homeworkList || []).filter(h => h.homework_date === isoDate);
 
-    // Перебираем строки уроков внутри этой карточки дня
     const lessonRows = dayBlock.querySelectorAll('.schedule-main');
     lessonRows.forEach(row => {
       const titleElement = row.querySelector('.schedule-right__title');
-      
-      // ЗАЩИТА: Пропускаем выходные дни, где нет названия предмета
+
       if (!titleElement) return;
 
       const subjectTitle = titleElement.textContent.trim();
@@ -79,14 +69,13 @@ async function loadDiaryHomework() {
       
       if (!hwTextElement) return;
 
-      // Ищем совпадение по имени предмета
       const matchedHw = dayHomeworks.find(h => h.subject_name.toLowerCase() === subjectTitle.toLowerCase());
 
       if (matchedHw) {
         let htmlContent = matchedHw.description;
 
         if (matchedHw.material_link && matchedHw.material_link.trim() !== '') {
-          htmlContent += `<br><a href="${matchedHw.material_link.trim()}" target="_blank" style="color: #4b7bec; text-decoration: underline; font-size: 12px; margin-top: 5px; display: inline-block;">🔗 Материалы к уроку</a>`;
+          htmlContent += `<br><a class="schedule-right__homework-link" href="${matchedHw.material_link.trim()}" target="_blank">${matchedHw.material_link.trim()}</a>`;
         }
         hwTextElement.innerHTML = htmlContent;
       } else {
@@ -97,10 +86,8 @@ async function loadDiaryHomework() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Ловим кастомное событие от основного скрипта (сработает при любой перезагрузке!)
   document.addEventListener('diaryRendered', loadDiaryHomework);
 
-  // Оставляем триггеры на стрелочки переключения недель
   const prevBtn = document.getElementById("prev-week-btn");
   const nextBtn = document.getElementById("next-week-btn");
   

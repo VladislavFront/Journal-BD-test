@@ -109,3 +109,23 @@
   color: var(--text-color-dark);
   font-weight: bold;
 }
+
+
+.grade-cell-select_excellent,
+.grade-cell-select_absence-excellent {
+  color: var(--excellent-color-dark);
+}
+
+.grade-cell-select_good,
+.grade-cell-select_absence-good {
+  color: var(--good-color-dark);
+}
+
+.grade-cell-select_normal {
+  color: var(--normal-color-dark);
+}
+
+.grade-cell-select_horrible,
+.grade-cell-select_absence-horrible  {
+  color: var(--horrible-color-dark);
+}

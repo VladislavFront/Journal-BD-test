@@ -1,10 +1,9 @@
 class StudentGradesViewer {
   constructor() {
-    this.currentYear = 2026; // Фиксированный рабочий год проекта
+    this.currentYear = 2026; // Текущий рабочий год проекта
     this.studentId = null;
     this.classId = null;
 
-    // Элементы интерфейса
     this.monthSelect = document.querySelector('.js-student-select-month');
     this.tbody = document.getElementById('js-student-grades-tbody');
     this.daysHeader = document.getElementById('js-student-days-header');
@@ -12,7 +11,6 @@ class StudentGradesViewer {
   }
 
   async init() {
-    // 1. Умное определение пользователя (сам ученик или выбранный ребенок родителя)
     const { data: { user } } = await db.auth.getUser();
     if (!user) {
       window.location.href = '../auth/registration.html';
@@ -40,7 +38,6 @@ class StudentGradesViewer {
       return;
     }
 
-    // Автоматически выставляем текущий системный месяц в селекте
     const systemMonth = new Date().getMonth();
     if (this.monthSelect) this.monthSelect.value = systemMonth + 1;
 
@@ -58,7 +55,6 @@ class StudentGradesViewer {
     return new Date(this.currentYear, month, 0).getDate();
   }
 
-  // Динамическая перерисовка шапки чисел под выбранный месяц
   renderCalendarGrid() {
     const selectedMonth = parseInt(this.monthSelect.value, 10);
     const totalDays = this.getDaysInMonth(selectedMonth);
@@ -77,19 +73,16 @@ class StudentGradesViewer {
     this.loadStudentGradesData();
   }
 
-  // Загрузка предметов и оценок из Supabase
   async loadStudentGradesData() {
     const selectedMonth = parseInt(this.monthSelect.value, 10);
     this.tbody.innerHTML = `<tr><td colspan="35" style="text-align:center;">Загрузка оценок...</td></tr>`;
 
-    // 1. Получаем список уникальных предметов данного класса из расписания (schedule)
     const { data: scheduleData } = await db
       .from('schedule')
       .select('subject_name')
       .eq('class_id', this.classId)
       .not('subject_name', 'eq', '');
 
-    // Формируем чистый массив уникальных предметов (убираем дубли по дням недели)
     const uniqueSubjects = [...new Set((scheduleData || []).map(item => item.subject_name))].sort();
 
     if (uniqueSubjects.length === 0) {
@@ -97,13 +90,11 @@ class StudentGradesViewer {
       return;
     }
 
-    // 2. Формируем диапазон дат выбранного месяца
     const totalDays = this.getDaysInMonth(selectedMonth);
     const formattedMonth = String(selectedMonth).padStart(2, '0');
     const startDate = `${this.currentYear}-${formattedMonth}-01`;
     const endDate = `${this.currentYear}-${formattedMonth}-${String(totalDays).padStart(2, '0')}`;
 
-    // 3. Запрашиваем все оценки этого ученика за месяц
     const { data: gradesData, error: gradesErr } = await db
       .from('grades')
       .select('subject_name, grade_value, grade_date')
@@ -119,14 +110,12 @@ class StudentGradesViewer {
     this.renderGradesRows(uniqueSubjects, gradesData || [], totalDays, selectedMonth);
   }
 
-  // Генерация строк предметов и оценок
   renderGradesRows(subjects, grades, totalDays, selectedMonth) {
     this.tbody.innerHTML = '';
 
     subjects.forEach((subjectName) => {
       const tr = document.createElement('tr');
 
-      // Название предмета (сохраняем оригинальные стили левой колонки)
       const subjectTd = document.createElement('td');
       subjectTd.className = 'sticky-col-name';
       subjectTd.style.textAlign = 'left';
@@ -134,13 +123,11 @@ class StudentGradesViewer {
       subjectTd.textContent = subjectName;
       tr.appendChild(subjectTd);
 
-      // Фильтруем все оценки ученика конкретно по этому предмету
       const subjectGrades = grades.filter(g => g.subject_name.toLowerCase() === subjectName.toLowerCase());
 
       let sum = 0;
       let count = 0;
 
-      // Генерируем ячейки дней
       for (let day = 1; day <= totalDays; day++) {
         const td = document.createElement('td');
         
@@ -151,22 +138,20 @@ class StudentGradesViewer {
           const val = foundGrade.grade_value;
           td.textContent = val;
 
-          // Расставляем оригинальные CSS-плашки оформления в зависимости от оценки
-          if (val === '5') { td.className = 'grade-cell-select _excellent'; sum += 5; count++; }
-          else if (val === '4') { td.className = 'grade-cell-select _good'; sum += 4; count++; }
-          else if (val === '3') { td.className = 'grade-cell-select _normal'; sum += 3; count++; }
-          else if (val === '2') { td.className = 'grade-cell-select _horrible'; sum += 2; count++; }
-          else if (['Н', 'Б', 'У'].includes(val)) {
-            td.className = 'grade-cell-select _absence'; // Оформление для пропусков
-          }
+          if (val === '5') { td.className = 'grade-cell-select_excellent'; sum += 5; count++; }
+          else if (val === '4') { td.className = 'grade-cell-select_good'; sum += 4; count++; }
+          else if (val === '3') { td.className = 'grade-cell-select_normal'; sum += 3; count++; }
+          else if (val === '2') { td.className = 'grade-cell-select_horrible'; sum += 2; count++; }
+          else if (['Н'].includes(val)) { td.className = 'grade-cell-select_absence-horrible'; }
+          else if (['Б'].includes(val)) { td.className = 'grade-cell-select_absence-excellent'; }
+          else if (['У'].includes(val)) { td.className = 'grade-cell-select_absence-good'; }
         } else {
-          td.textContent = ''; // Пустой день
+          td.textContent = '';
         }
         
         tr.appendChild(td);
       }
 
-      // Ячейка Итога / Среднего балла
       const avgTd = document.createElement('td');
       avgTd.className = 'sticky-col-result';
       avgTd.style.fontWeight = 'bold';
@@ -174,6 +159,17 @@ class StudentGradesViewer {
       if (count > 0) {
         const avg = sum / count;
         avgTd.textContent = avg.toFixed(2);
+
+        if (avg <= 2.50) {
+          avgTd.style.color = 'var(--horrible-color-dark)'
+        } else if (avg <= 3.50) {
+          avgTd.style.color = 'var(--normal-color-dark)'
+        } else if (avg <= 4.50) {
+          avgTd.style.color = 'var(--good-color-dark)'
+        } else if (avg > 4.50) {
+          avgTd.style.color = 'var(--excellent-color-dark)'
+        }
+        
       } else {
         avgTd.textContent = '—';
       }
@@ -184,7 +180,6 @@ class StudentGradesViewer {
   }
 }
 
-// Запуск модуля оценок
 document.addEventListener('DOMContentLoaded', () => {
   const viewer = new StudentGradesViewer();
   viewer.init();

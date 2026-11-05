@@ -1,8 +1,7 @@
 class HomeworkManager {
   constructor() {
     this.daysOfWeekRu = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-    
-    // Элементы интерфейса
+
     this.dateInput = document.querySelector('.js-hw-date');
     this.subjectSelect = document.querySelector('.js-hw-subject');
     this.classSelect = document.querySelector('.js-hw-class');
@@ -13,8 +12,7 @@ class HomeworkManager {
 
   init() {
     if (!this.saveBtn) return;
-    
-    // По умолчанию ставим сегодняшнюю дату в инпут
+
     const today = new Date().toISOString().split('T')[0];
     if (this.dateInput) this.dateInput.value = today;
 
@@ -24,13 +22,11 @@ class HomeworkManager {
     });
   }
 
-  // Преобразование даты YYYY-MM-DD в красивый формат ДД.ММ.ГГГГ для алертов
   formatDateRu(dateStr) {
     const [y, m, d] = dateStr.split('-');
     return `${d}.${m}.${y}`;
   }
 
-  // Главный процесс сохранения с цепочкой проверок
   async handleSaveProcess() {
     const classId = this.classSelect.value;
     const subject = this.subjectSelect.value;
@@ -43,7 +39,6 @@ class HomeworkManager {
       return;
     }
 
-    // 1. ПРОВЕРКА НА ВЫХОДНЫЕ
     const dateObj = new Date(selectedDate);
     const dayIndex = dateObj.getDay(); // 0 - воскресенье, 6 - суббота
 
@@ -55,13 +50,11 @@ class HomeworkManager {
     this.saveBtn.disabled = true;
     this.saveBtn.textContent = 'Проверка расписания...';
 
-    // 2. ПРОВЕРКА НАЛИЧИЯ УРОКА В РАСПИСАНИИ
     const dayNameRu = this.daysOfWeekRu[dayIndex];
     
     const hasLesson = await this.checkLessonInSchedule(classId, dayNameRu, subject);
 
     if (!hasLesson) {
-      // Урока нет. Ищем дату ближайшего следующего урока
       const nextLessonDate = await this.findNextLessonDate(classId, selectedDate, subject);
       
       let confirmMessage = `Выбранного урока нет на ${this.formatDateRu(selectedDate)}.`;
@@ -78,7 +71,6 @@ class HomeworkManager {
         return;
       }
 
-      // Если пользователь согласился и дата найдена — переопределяем целевую дату для сохранения
       if (userAgreed && nextLessonDate) {
         this.dateInput.value = nextLessonDate;
         this.saveBtn.disabled = true;
@@ -89,12 +81,10 @@ class HomeworkManager {
       }
     }
 
-    // Если урок есть или предмета вообще нет в сетке, но учитель принудительно подтвердил сохранение
     await this.executeUpsert(classId, subject, selectedDate, taskText, materialLink);
     this.resetSaveButton();
   }
 
-  // Проверка: есть ли предмет в шаблоне расписания на этот день недели
   async checkLessonInSchedule(classId, dayName, subject) {
     const { data, error } = await db
       .from('schedule')
@@ -111,9 +101,7 @@ class HomeworkManager {
     return data && data.length > 0;
   }
 
-  // Поиск даты ближайшего следующего урока
   async findNextLessonDate(classId, startDateStr, subject) {
-    // Вытягиваем все дни недели, когда у этого класса ЕСТЬ данный предмет
     const { data: activeDays, error } = await db
       .from('schedule')
       .select('day_of_week')
@@ -122,21 +110,18 @@ class HomeworkManager {
 
     if (error || !activeDays || activeDays.length === 0) return null;
 
-    // Переводим текстовые дни недели в индексы JS (0-6)
     const allowedDayIndexes = activeDays.map(item => this.daysOfWeekRu.indexOf(item.day_of_week));
 
-    // Бежим циклом по календарным дням вперед от стартовой даты (максимум на 14 дней вперед)
     let checkDate = new Date(startDateStr);
     for (let i = 1; i <= 14; i++) {
       checkDate.setDate(checkDate.getDate() + 1);
       if (allowedDayIndexes.includes(checkDate.getDay())) {
-        return checkDate.toISOString().split('T')[0]; // Возвращаем YYYY-MM-DD
+        return checkDate.toISOString().split('T')[0]; 
       }
     }
     return null;
   }
 
-  // Непосредственная запись в Supabase
   async executeUpsert(classId, subject, finalDate, text, link) {
     const { error } = await db
       .from('homework')
@@ -164,7 +149,6 @@ class HomeworkManager {
   }
 }
 
-// Запуск модуля
 document.addEventListener('DOMContentLoaded', () => {
   const hw = new HomeworkManager();
   hw.init();

@@ -29,10 +29,10 @@
           </div>
           <div class="burger__top-container">
             <div class="user-block">
-              <div class="user-block__avatar">АС</div>
+              <div class="user-block__avatar js-parent-avatar"></div>
               <div class="user-info">
-                <div class="user-info__name">Соколова А.</div>
-                <p class="user-info__class">9A класс</p>
+                <div class="user-info__name js-parent-name"></div>
+                <p class="user-info__class js-parent-status"></p>
               </div>
             </div>
             <button class="header-right__btn-exit">Выйти</button>
@@ -75,10 +75,10 @@
       <div class="header-right">
         <button class="header-right__btn-exit">Выйти</button>
         <div class="user-block">
-          <div class="user-block__avatar">АС</div>
+          <div class="user-block__avatar js-parent-avatar"></div>
           <div class="user-info">
-            <div class="user-info__name">Соколова А.</div>
-            <p class="user-info__class">9A класс</p>
+            <div class="user-info__name js-parent-name"></div>
+            <p class="user-info__class js-parent-status"></p>
           </div>
         </div>
         <div class="burger-button" onclick="openBurgerMenu()">
@@ -95,10 +95,10 @@
       <aside class="left-panel sidebar">
         <div class="aside-card aside-card_one">
           <div class="user-block">
-            <div class="user-block__avatar">АС</div>
+            <div class="user-block__avatar js-parent-avatar"></div>
             <div class="user-info">
-              <div class="user-info__name">Соколова А.</div>
-              <p class="user-info__class">9A класс</p>
+              <div class="user-info__name js-parent-name"></div>
+              <p class="user-info__class js-parent-status"></p>
             </div>
           </div>
           <div class="user-class-teacher">
@@ -140,7 +140,7 @@
         <div class="main-header">
           <div class="main-header__title-container">
             <h1 class="main-header__title">Домашние задания</h1>
-            <p class="main-header__sub-title"><span class="user-name">Соколова. А</span> <span class="user-class">9А</span> <span class="razdelitel">*</span> <span class="quarter"> | четверть</span></p>
+            <p class="main-header__sub-title"><span class="user-name js-parent-name"></span> <span class="user-class js-parent-status"></span> <span class="razdelitel">*</span> <span class="quarter"> | четверть</span></p>
           </div>
           <button class="export-btn export-btn_content-export">Экспорт в PDF</button>
         </div>
@@ -315,5 +315,10 @@
   <script src="../../js/search.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js"></script>
+
+  <script src="../../js/parent-ui.js"></script>
+
+  <script src="../../js/student-diary.js"></script>
+  <script src="../../js/student-hw.js"></script>
 </body>
 </html>

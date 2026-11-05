@@ -3,16 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (searchInputs.length === 0) return;
 
-    // Стиль для маркера
     const style = document.createElement('style');
     style.textContent = 'mark { background-color: var(--icon-color-dark); color: var(--text-color-dark); border-radius: 3px; padding: 0 2px;}';
     document.head.appendChild(style);
 
-    // Контекст для поиска (главный контент страницы)
     const context = document.querySelector('main') || document.querySelector('.content') || document.body;
     const instance = new Mark(context);
 
-    // Навешиваем логику на все найденные поисковые строки
     searchInputs.forEach(searchInput => {
         
         searchInput.addEventListener('keydown', (e) => {
@@ -23,10 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const val = e.target.value;
             const searchText = val.trim();
 
-            // Синхронизируем текст во всех поисковых строках
             searchInputs.forEach(el => { if (el !== searchInput) el.value = val; });
 
-            // Запускаем подсветку
             instance.unmark({
                 done: () => {
                     if (searchText.length >= 1) {
